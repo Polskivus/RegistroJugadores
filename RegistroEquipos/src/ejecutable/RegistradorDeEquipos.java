@@ -14,9 +14,11 @@ public class RegistradorDeEquipos {
 		
 		String opc;
 		
+		int opc2;
+		
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.println("Introduce los datos del equipo:");
+		System.out.println("Introduce los datos del equipo\n");
 		
 		Equipo equipo = new Equipo();
 		
@@ -33,24 +35,23 @@ public class RegistradorDeEquipos {
 			opcion();
 			
 			opc = sc.nextLine();
-			opc.toLowerCase();
 			
 			if(opc.equals("J")) {
 				
 				Jugador jugador = new Jugador();
 				
-				System.out.println("Introduce el nombre del jugador:");
+				System.out.println("\nIntroduce el nombre del jugador:");
 				jugador.setNombreCompleto(sc.nextLine());
 				
-				System.out.println("Introduce el numero del jugador");
-				jugador.setNumeroDorsal(sc.nextInt());
+				System.out.println("\nIntroduce el numero del jugador");
+				jugador.setNumeroDorsal(Integer.parseInt(sc.nextLine()));
 				
-				System.out.println("Introduce la fecha de nacimiento:");
+				System.out.println("\nIntroduce la fecha de nacimiento:");
 				SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 				jugador.setFechaNacimiento(sdf.parse(sc.nextLine()));
 				
-				System.out.println("Introduce su sueldo:");
-				jugador.setSueldo(sc.nextDouble());
+				System.out.println("\nIntroduce su sueldo:");
+				jugador.setSueldo(Double.parseDouble(sc.nextLine()));
 				
 				equipo.addJugador(jugador);
 				
@@ -59,7 +60,39 @@ public class RegistradorDeEquipos {
 			
 		} while (!opc.equals("A"));
 		
+		equipo.mostrarEnPantalla();
 		
+		System.out.println("-------------------------------------------");
+		System.out.println("\nDime que es lo que quieres hacer con la info: Guardar (1) o Salir (0)");
+		
+		
+		
+		do {
+
+			 opc2 = Integer.parseInt(sc.nextLine());
+			
+			switch (opc2) {
+			case 1: 
+				
+				
+				
+				break;
+			
+			case 0:
+			
+				System.exit(0);
+				
+				
+				break;
+				
+				
+			default:
+				System.out.println("Por favor introduce un valor valido.");
+				
+				break;
+			}
+		}while(opc2 != 0 || opc2 != 1);
+
 		
 	}
 

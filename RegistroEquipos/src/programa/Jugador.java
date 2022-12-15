@@ -1,5 +1,6 @@
 package programa;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Jugador {
@@ -8,6 +9,7 @@ public class Jugador {
 	private int numeroDorsal;
 	private Date fechaNacimiento;
 	private Double sueldo;
+	
 	
 	
 	public String getNombreCompleto() {
@@ -33,6 +35,13 @@ public class Jugador {
 	}
 	public void setSueldo(Double sueldo) {
 		this.sueldo = sueldo;
+	}
+	
+	public void MostrarEnPantalla() {
+		System.out.println(this.NombreCompleto+ "\t" +
+				this.numeroDorsal+"\t"+
+				(new SimpleDateFormat("dd/MM/yyyy").format(this.fechaNacimiento))+"\t"+
+				this.sueldo+" €");
 	}
 
 	

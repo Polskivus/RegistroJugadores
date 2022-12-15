@@ -39,6 +39,12 @@ public class Equipo {
 		this.jugadores = jugadores;
 	}
 	
+	public void mostrarEnPantalla() {
+		System.out.println("El quipo es: "+this.nombreEquipo);
+		for(Jugador jugador : this.jugadores) {
+			jugador.MostrarEnPantalla();
+		}
+	}
 	
 	
 }
